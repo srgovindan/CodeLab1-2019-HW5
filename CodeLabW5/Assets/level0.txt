@@ -1,6 +1,11 @@
-XXXXX
-X...X
-XXXXX
-X...X
-XXXXX
+XXXXXXXXXXXXXXXXXXX
+X.G....XXXXXX...*XX
+XXXXX...XXX......XX
+X........#....*..XX
+XXXXX...XXX......XX
+XXX....XXXX..*...XX
+X....XXXXXX......XX
+XXX........*.....XX
+XXXP...XXXX......XX
+XXXXXXXXXXXXXXXXXXX
 

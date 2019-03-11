@@ -27,10 +27,22 @@ public class AsciiLevelLoader : MonoBehaviour
                         //make a wall
                         GameObject newWall = Instantiate(Resources.Load("Prefabs/Wall")) as GameObject;
                         //change wall position
-                        newWall.transform.position = new Vector3(x,y);
+                        newWall.transform.position = new Vector3(x - line.Length / 2f, -y + inputLines.Length/2f);
                         break;
-                    case '.':
-                        //make a berry?
+                    case '*':
+                        GameObject newBerry = Instantiate(Resources.Load("Prefabs/Berry")) as GameObject;
+                        //change wall position
+                        newBerry.transform.position = new Vector3(x - line.Length / 2f,inputLines.Length/2f - y);
+                        break;
+                    case 'P':
+                        GameObject newPlayer = Instantiate(Resources.Load("Prefabs/Player")) as GameObject;
+                        //change wall position
+                        newPlayer.transform.position = new Vector3(x - line.Length / 2f,inputLines.Length/2f - y);
+                        break;
+                    case 'T':
+                        GameObject newGoal = Instantiate(Resources.Load("Prefabs/Goal")) as GameObject;
+                        //change wall position
+                        newGoal.transform.position = new Vector3(x - line.Length / 2f,inputLines.Length/2f - y);
                         break;
                 }
             }
