@@ -21,30 +21,32 @@ public class AsciiLevelLoader : MonoBehaviour
             string line = inputLines[y];
             for (int x = 0; x < line.Length; x++)
             {
+                // create an empty tile GameObject
+                GameObject tile = null;
                 switch (line[x])
                 {
                     case 'X':
                         //make a wall
-                        GameObject newWall = Instantiate(Resources.Load("Prefabs/Wall")) as GameObject;
-                        //change wall position
-                        newWall.transform.position = new Vector3(x - line.Length / 2f, -y + inputLines.Length/2f);
+                        tile = Instantiate(Resources.Load("Prefabs/Wall")) as GameObject;
                         break;
                     case '*':
-                        GameObject newBerry = Instantiate(Resources.Load("Prefabs/Berry")) as GameObject;
-                        //change wall position
-                        newBerry.transform.position = new Vector3(x - line.Length / 2f,inputLines.Length/2f - y);
+                         tile = Instantiate(Resources.Load("Prefabs/Berry")) as GameObject;
                         break;
                     case 'P':
-                        GameObject newPlayer = Instantiate(Resources.Load("Prefabs/Player")) as GameObject;
-                        //change wall position
-                        newPlayer.transform.position = new Vector3(x - line.Length / 2f,inputLines.Length/2f - y);
+                       tile = Instantiate(Resources.Load("Prefabs/Player")) as GameObject;
                         break;
                     case 'T':
-                        GameObject newGoal = Instantiate(Resources.Load("Prefabs/Goal")) as GameObject;
-                        //change wall position
-                        newGoal.transform.position = new Vector3(x - line.Length / 2f,inputLines.Length/2f - y);
+                        tile = Instantiate(Resources.Load("Prefabs/Goal")) as GameObject;
+                        break;
+                    default:
+                        tile = null;
                         break;
                 }
+                // position the tile
+                if (tile != null)
+                        {
+                            tile.transform.position = new Vector3(x - line.Length / 2f, inputLines.Length / 2f - y);
+                        }
             }
         }
     }
