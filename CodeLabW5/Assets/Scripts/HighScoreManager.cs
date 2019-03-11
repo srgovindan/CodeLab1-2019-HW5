@@ -30,8 +30,8 @@ public class HighScoreManager : MonoBehaviour
         
         // initialize list here
         // not reqd. since the inspector initializes public variables for us
-        hsNames = new List<string>();
-        hsScores = new List<int>();
+        //hsNames = new List<string>();
+        //hsScores = new List<int>();
         
         //if file exists, read it 
         string[] inputLines= File.ReadAllLines(filePath);
@@ -45,11 +45,5 @@ public class HighScoreManager : MonoBehaviour
             hsNames.Add(name); //put name in my list of names
             hsScores.Add(score); //put score in my list of scores
         }
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
 }
