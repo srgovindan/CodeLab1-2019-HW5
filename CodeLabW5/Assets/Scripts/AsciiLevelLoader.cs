@@ -21,20 +21,19 @@ public class AsciiLevelLoader : MonoBehaviour
             string line = inputLines[y];
             for (int x = 0; x < line.Length; x++)
             {
-                if (line[x] == 'X')
+                switch (line[x])
                 {
-                    //make a wall
-                    GameObject newWall = Instantiate(Resources.Load("Prefabs/Wall")) as GameObject;
-                    //change wall position
-                    newWall.transform.position = new Vector3(x,y);
+                    case 'X':
+                        //make a wall
+                        GameObject newWall = Instantiate(Resources.Load("Prefabs/Wall")) as GameObject;
+                        //change wall position
+                        newWall.transform.position = new Vector3(x,y);
+                        break;
+                    case '.':
+                        //make a berry?
+                        break;
                 }
             }
         }
-    }
-
-    
-    void Update()
-    {
-        
     }
 }
